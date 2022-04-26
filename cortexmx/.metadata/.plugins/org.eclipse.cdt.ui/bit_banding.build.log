@@ -1,0 +1,10 @@
+01:08:48 **** Incremental Build of configuration Debug for project bit_banding ****
+make -j8 all 
+arm-none-eabi-size   bit_banding.elf 
+   text	   data	    bss	    dec	    hex	filename
+    704	      8	   1568	   2280	    8e8	bit_banding.elf
+Finished building: default.size.stdout
+ 
+
+01:08:48 Build Finished. 0 errors, 0 warnings. (took 256ms)
+

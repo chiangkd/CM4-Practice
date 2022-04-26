@@ -1,52 +1,21 @@
-18:18:20 **** Incremental Build of configuration Debug for project t-bit ****
-make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303zetx.d" -MT"Startup/startup_stm32f303zetx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f303zetx.o" "../Startup/startup_stm32f303zetx.s"
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc -o "t-bit.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\t-bit\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="t-bit.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: t-bit.elf
- 
-arm-none-eabi-size   t-bit.elf 
-arm-none-eabi-objdump -h -S  t-bit.elf  > "t-bit.list"
-   text	   data	    bss	    dec	    hex	filename
-   3912	    108	   1588	   5608	   15e8	t-bit.elf
-Finished building: default.size.stdout
- 
-Finished building: t-bit.list
- 
-18:18:37 **** Incremental Build of configuration Debug for project t-bit ****
-make -j8 all 
-arm-none-eabi-size   t-bit.elf 
-   text	   data	    bss	    dec	    hex	filename
-   3912	    108	   1588	   5608	   15e8	t-bit.elf
-Finished building: default.size.stdout
- 
-18:33:01 **** Incremental Build of configuration Debug for project t-bit ****
-make -j8 all 
-arm-none-eabi-size   t-bit.elf 
-   text	   data	    bss	    dec	    hex	filename
-   3912	    108	   1588	   5608	   15e8	t-bit.elf
-Finished building: default.size.stdout
- 
-18:45:11 **** Incremental Build of configuration Debug for project t-bit ****
-make -j8 all 
-arm-none-eabi-size   t-bit.elf 
-   text	   data	    bss	    dec	    hex	filename
-   3912	    108	   1588	   5608	   15e8	t-bit.elf
-Finished building: default.size.stdout
- 
-18:59:10 **** Incremental Build of configuration Debug for project t-bit ****
+01:07:05 **** Incremental Build of configuration Debug for project bit_banding ****
 make -j8 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "t-bit.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\t-bit\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="t-bit.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: t-bit.elf
+arm-none-eabi-gcc -o "bit_banding.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\bit_banding\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bit_banding.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bit_banding.elf
  
-arm-none-eabi-size   t-bit.elf 
-arm-none-eabi-objdump -h -S  t-bit.elf  > "t-bit.list"
+arm-none-eabi-size   bit_banding.elf 
+arm-none-eabi-objdump -h -S  bit_banding.elf  > "bit_banding.list"
    text	   data	    bss	    dec	    hex	filename
-   3888	    108	   1588	   5584	   15d0	t-bit.elf
+    704	      8	   1568	   2280	    8e8	bit_banding.elf
 Finished building: default.size.stdout
  
-Finished building: t-bit.list
+Finished building: bit_banding.list
+ 
+01:08:48 **** Incremental Build of configuration Debug for project bit_banding ****
+make -j8 all 
+arm-none-eabi-size   bit_banding.elf 
+   text	   data	    bss	    dec	    hex	filename
+    704	      8	   1568	   2280	    8e8	bit_banding.elf
+Finished building: default.size.stdout
  
