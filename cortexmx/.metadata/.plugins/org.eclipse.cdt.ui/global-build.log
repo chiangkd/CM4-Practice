@@ -1,21 +1,63 @@
-01:07:05 **** Incremental Build of configuration Debug for project bit_banding ****
+02:27:26 **** Incremental Build of configuration Debug for project stack ****
 make -j8 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "bit_banding.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\bit_banding\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bit_banding.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: bit_banding.elf
+arm-none-eabi-gcc -o "stack.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\stack\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stack.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stack.elf
  
-arm-none-eabi-size   bit_banding.elf 
-arm-none-eabi-objdump -h -S  bit_banding.elf  > "bit_banding.list"
+arm-none-eabi-size   stack.elf 
+arm-none-eabi-objdump -h -S  stack.elf  > "stack.list"
    text	   data	    bss	    dec	    hex	filename
-    704	      8	   1568	   2280	    8e8	bit_banding.elf
+   5568	    108	   1588	   7264	   1c60	stack.elf
 Finished building: default.size.stdout
  
-Finished building: bit_banding.list
+Finished building: stack.list
  
-01:08:48 **** Incremental Build of configuration Debug for project bit_banding ****
+02:29:57 **** Incremental Build of configuration Debug for project stack ****
 make -j8 all 
-arm-none-eabi-size   bit_banding.elf 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "stack.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\stack\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stack.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stack.elf
+ 
+arm-none-eabi-size   stack.elf 
+arm-none-eabi-objdump -h -S  stack.elf  > "stack.list"
    text	   data	    bss	    dec	    hex	filename
-    704	      8	   1568	   2280	    8e8	bit_banding.elf
+   5572	    108	   1588	   7268	   1c64	stack.elf
 Finished building: default.size.stdout
+ 
+Finished building: stack.list
+ 
+02:32:35 **** Incremental Build of configuration Debug for project stack ****
+make -j8 all 
+arm-none-eabi-size   stack.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5572	    108	   1588	   7268	   1c64	stack.elf
+Finished building: default.size.stdout
+ 
+02:33:21 **** Incremental Build of configuration Debug for project stack ****
+make -j8 all 
+arm-none-eabi-size   stack.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5572	    108	   1588	   7268	   1c64	stack.elf
+Finished building: default.size.stdout
+ 
+02:34:45 **** Incremental Build of configuration Debug for project stack ****
+make -j8 all 
+arm-none-eabi-size   stack.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5572	    108	   1588	   7268	   1c64	stack.elf
+Finished building: default.size.stdout
+ 
+02:36:12 **** Incremental Build of configuration Debug for project stack ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "stack.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\stack\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stack.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stack.elf
+ 
+arm-none-eabi-size   stack.elf 
+arm-none-eabi-objdump -h -S  stack.elf  > "stack.list"
+   text	   data	    bss	    dec	    hex	filename
+   5572	    108	   1588	   7268	   1c64	stack.elf
+Finished building: default.size.stdout
+ 
+Finished building: stack.list
  

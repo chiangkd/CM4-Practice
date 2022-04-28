@@ -22,8 +22,22 @@
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 
+#include<stdio.h>
+
+int fun_add (int a, int b, int c, int d)
+{
+	return a + b + c + d;
+}
+
 int main(void)
 {
+	int ret;
+	for(;;);
+	ret = fun_add(1, 4, 5, 6);
+
+	printf("result = %d\n", ret);
+
+
     /* Loop forever */
 	for(;;);
 }
