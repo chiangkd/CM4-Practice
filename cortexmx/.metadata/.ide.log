@@ -2292,3 +2292,7 @@
 2022-04-29 02:45:13,085 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.readByte(SWVClient.java:295)
 2022-04-29 02:45:13,088 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.getNextByte(SWVClient.java:278)
 2022-04-29 02:45:13,091 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.run(SWVClient.java:312)
+2022-04-30 00:21:43,846 [INFO] Activator:177 - 
+
+
+2022-04-30 00:21:43,850 [INFO] Activator:178 - !SESSION log4j initialized
