@@ -1,0 +1,10 @@
+00:52:17 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-size   ISR.elf 
+   text	   data	    bss	    dec	    hex	filename
+    744	      8	   1568	   2320	    910	ISR.elf
+Finished building: default.size.stdout
+ 
+
+00:52:17 Build Finished. 0 errors, 0 warnings. (took 245ms)
+

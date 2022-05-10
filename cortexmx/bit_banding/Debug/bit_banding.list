@@ -79,7 +79,7 @@ Disassembly of section .text:
  80001d0:	080002a8 	.word	0x080002a8
 
 080001d4 <main>:
-
+#include<stdint.h>
 #define ALIAS_BASE 0x22000000U
 #define BITBAND_BASE 0x20000000U
 

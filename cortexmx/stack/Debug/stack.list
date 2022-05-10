@@ -245,7 +245,7 @@ void SVC_Handler(void)
 {
  80002fc:	b580      	push	{r7, lr}
  80002fe:	af00      	add	r7, sp, #0
-	printf("in SVC_Handler\n");
+	printf("in SVC_Handler\n");	 // 這裡 run 完後再次回到 thread mode
  8000300:	4802      	ldr	r0, [pc, #8]	; (800030c <SVC_Handler+0x10>)
  8000302:	f000 f987 	bl	8000614 <puts>
 }

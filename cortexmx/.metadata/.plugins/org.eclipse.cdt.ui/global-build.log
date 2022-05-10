@@ -1,63 +1,427 @@
-02:27:26 **** Incremental Build of configuration Debug for project stack ****
+00:04:13 **** Incremental Build of configuration Debug for project PinRead_and_ISR ****
 make -j8 all 
+arm-none-eabi-size   PinRead_and_ISR.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	PinRead_and_ISR.elf
+Finished building: default.size.stdout
+ 
+00:04:24 **** Incremental Build of configuration Debug for project PinRead_and_ISR ****
+make -j8 all 
+arm-none-eabi-size   PinRead_and_ISR.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	PinRead_and_ISR.elf
+Finished building: default.size.stdout
+ 
+00:04:41 **** Incremental Build of configuration Debug for project PinRead_and_ISR ****
+make -j8 all 
+arm-none-eabi-size   PinRead_and_ISR.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	PinRead_and_ISR.elf
+Finished building: default.size.stdout
+ 
+00:08:30 **** Incremental Build of configuration Debug for project PinRead_and_ISR ****
+make -j8 all 
+arm-none-eabi-size   PinRead_and_ISR.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	PinRead_and_ISR.elf
+Finished building: default.size.stdout
+ 
+00:09:44 **** Incremental Build of configuration Debug for project PinRead_and_ISR ****
+make -j8 all 
+arm-none-eabi-size   PinRead_and_ISR.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	PinRead_and_ISR.elf
+Finished building: default.size.stdout
+ 
+00:10:52 **** Incremental Build of configuration Debug for project 001HelloWorld ****
+make -j8 all 
+arm-none-eabi-size   001HelloWorld.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3744	    108	   1588	   5440	   1540	001HelloWorld.elf
+Finished building: default.size.stdout
+ 
+00:11:41 **** Clean-only build of configuration Debug for project stack ****
+make -j8 clean 
+rm -rf ./Startup/startup_stm32f303zetx.d ./Startup/startup_stm32f303zetx.o
+rm -rf ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf default.size.stdout stack.elf stack.list stack.map
+ 
+00:11:41 **** Build of configuration Debug for project stack ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303zetx.d" -MT"Startup/startup_stm32f303zetx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f303zetx.o" "../Startup/startup_stm32f303zetx.s"
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
 arm-none-eabi-gcc -o "stack.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\stack\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stack.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: stack.elf
  
 arm-none-eabi-size   stack.elf 
 arm-none-eabi-objdump -h -S  stack.elf  > "stack.list"
    text	   data	    bss	    dec	    hex	filename
-   5568	    108	   1588	   7264	   1c60	stack.elf
+   5572	    108	   1588	   7268	   1c64	stack.elf
 Finished building: default.size.stdout
  
 Finished building: stack.list
  
-02:29:57 **** Incremental Build of configuration Debug for project stack ****
+00:12:05 **** Incremental Build of configuration Debug for project stack ****
 make -j8 all 
+arm-none-eabi-size   stack.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5572	    108	   1588	   7268	   1c64	stack.elf
+Finished building: default.size.stdout
+ 
+00:13:05 **** Clean-only build of configuration Debug for project t-bit ****
+make -j8 clean 
+rm -rf ./Startup/startup_stm32f303zetx.d ./Startup/startup_stm32f303zetx.o
+rm -rf ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf default.size.stdout t-bit.elf t-bit.list t-bit.map
+ 
+00:13:05 **** Build of configuration Debug for project t-bit ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303zetx.d" -MT"Startup/startup_stm32f303zetx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f303zetx.o" "../Startup/startup_stm32f303zetx.s"
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "stack.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\stack\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stack.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: stack.elf
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "t-bit.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\t-bit\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="t-bit.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: t-bit.elf
  
-arm-none-eabi-size   stack.elf 
-arm-none-eabi-objdump -h -S  stack.elf  > "stack.list"
+arm-none-eabi-size   t-bit.elf 
+arm-none-eabi-objdump -h -S  t-bit.elf  > "t-bit.list"
    text	   data	    bss	    dec	    hex	filename
-   5572	    108	   1588	   7268	   1c64	stack.elf
+   3888	    108	   1588	   5584	   15d0	t-bit.elf
 Finished building: default.size.stdout
  
-Finished building: stack.list
+Finished building: t-bit.list
  
-02:32:35 **** Incremental Build of configuration Debug for project stack ****
+00:14:03 **** Incremental Build of configuration Debug for project PinRead_and_ISR ****
 make -j8 all 
-arm-none-eabi-size   stack.elf 
+arm-none-eabi-size   PinRead_and_ISR.elf 
    text	   data	    bss	    dec	    hex	filename
-   5572	    108	   1588	   7268	   1c64	stack.elf
+    716	      8	   1568	   2292	    8f4	PinRead_and_ISR.elf
 Finished building: default.size.stdout
  
-02:33:21 **** Incremental Build of configuration Debug for project stack ****
+00:16:20 **** Build of configuration Debug for project ISR ****
 make -j8 all 
-arm-none-eabi-size   stack.elf 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303zetx.d" -MT"Startup/startup_stm32f303zetx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f303zetx.o" "../Startup/startup_stm32f303zetx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+../Src/main.c:22:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   22 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "ISR.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\ISR\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ISR.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ISR.elf
+ 
+arm-none-eabi-size   ISR.elf 
+arm-none-eabi-objdump -h -S  ISR.elf  > "ISR.list"
    text	   data	    bss	    dec	    hex	filename
-   5572	    108	   1588	   7268	   1c64	stack.elf
+    656	      8	   1568	   2232	    8b8	ISR.elf
 Finished building: default.size.stdout
  
-02:34:45 **** Incremental Build of configuration Debug for project stack ****
+Finished building: ISR.list
+ 
+00:16:35 **** Incremental Build of configuration Debug for project ISR ****
 make -j8 all 
-arm-none-eabi-size   stack.elf 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:30:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   30 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "ISR.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\ISR\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ISR.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ISR.elf
+ 
+arm-none-eabi-size   ISR.elf 
+arm-none-eabi-objdump -h -S  ISR.elf  > "ISR.list"
    text	   data	    bss	    dec	    hex	filename
-   5572	    108	   1588	   7268	   1c64	stack.elf
+    716	      8	   1568	   2292	    8f4	ISR.elf
 Finished building: default.size.stdout
  
-02:36:12 **** Incremental Build of configuration Debug for project stack ****
+Finished building: ISR.list
+ 
+00:18:30 **** Incremental Build of configuration Debug for project ISR ****
 make -j8 all 
+arm-none-eabi-size   ISR.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	ISR.elf
+Finished building: default.size.stdout
+ 
+00:19:12 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:30:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   30 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "ISR.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\ISR\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ISR.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ISR.elf
+ 
+arm-none-eabi-size   ISR.elf 
+arm-none-eabi-objdump -h -S  ISR.elf  > "ISR.list"
+   text	   data	    bss	    dec	    hex	filename
+    704	      8	   1568	   2280	    8e8	ISR.elf
+Finished building: default.size.stdout
+ 
+Finished building: ISR.list
+ 
+00:19:38 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:30:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   30 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "ISR.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\ISR\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ISR.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ISR.elf
+ 
+arm-none-eabi-size   ISR.elf 
+arm-none-eabi-objdump -h -S  ISR.elf  > "ISR.list"
+   text	   data	    bss	    dec	    hex	filename
+    704	      8	   1568	   2280	    8e8	ISR.elf
+Finished building: default.size.stdout
+ 
+Finished building: ISR.list
+ 
+00:19:57 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-size   ISR.elf 
+   text	   data	    bss	    dec	    hex	filename
+    704	      8	   1568	   2280	    8e8	ISR.elf
+Finished building: default.size.stdout
+ 
+00:21:18 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-size   ISR.elf 
+   text	   data	    bss	    dec	    hex	filename
+    704	      8	   1568	   2280	    8e8	ISR.elf
+Finished building: default.size.stdout
+ 
+00:21:38 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:30:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   30 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "ISR.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\ISR\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ISR.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ISR.elf
+ 
+arm-none-eabi-size   ISR.elf 
+arm-none-eabi-objdump -h -S  ISR.elf  > "ISR.list"
+   text	   data	    bss	    dec	    hex	filename
+    688	      8	   1568	   2264	    8d8	ISR.elf
+Finished building: default.size.stdout
+ 
+Finished building: ISR.list
+ 
+00:27:18 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:28:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   28 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "ISR.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\ISR\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ISR.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ISR.elf
+ 
+arm-none-eabi-size   ISR.elf 
+arm-none-eabi-objdump -h -S  ISR.elf  > "ISR.list"
+   text	   data	    bss	    dec	    hex	filename
+    728	      8	   1568	   2304	    900	ISR.elf
+Finished building: default.size.stdout
+ 
+Finished building: ISR.list
+ 
+00:28:49 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-size   ISR.elf 
+   text	   data	    bss	    dec	    hex	filename
+    728	      8	   1568	   2304	    900	ISR.elf
+Finished building: default.size.stdout
+ 
+00:29:57 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:28:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   28 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "ISR.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\ISR\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ISR.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ISR.elf
+ 
+arm-none-eabi-size   ISR.elf 
+arm-none-eabi-objdump -h -S  ISR.elf  > "ISR.list"
+   text	   data	    bss	    dec	    hex	filename
+    744	      8	   1568	   2320	    910	ISR.elf
+Finished building: default.size.stdout
+ 
+Finished building: ISR.list
+ 
+00:32:36 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-size   ISR.elf 
+   text	   data	    bss	    dec	    hex	filename
+    744	      8	   1568	   2320	    910	ISR.elf
+Finished building: default.size.stdout
+ 
+00:32:57 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-size   ISR.elf 
+   text	   data	    bss	    dec	    hex	filename
+    744	      8	   1568	   2320	    910	ISR.elf
+Finished building: default.size.stdout
+ 
+00:33:47 **** Clean-only build of configuration Debug for project bit_banding ****
+make -j8 clean 
+rm -rf ./Startup/startup_stm32f303zetx.d ./Startup/startup_stm32f303zetx.o
+rm -rf ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf bit_banding.elf bit_banding.list bit_banding.map default.size.stdout
+ 
+00:33:48 **** Build of configuration Debug for project bit_banding ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303zetx.d" -MT"Startup/startup_stm32f303zetx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f303zetx.o" "../Startup/startup_stm32f303zetx.s"
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "stack.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\stack\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stack.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: stack.elf
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "bit_banding.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\bit_banding\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bit_banding.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bit_banding.elf
  
-arm-none-eabi-size   stack.elf 
-arm-none-eabi-objdump -h -S  stack.elf  > "stack.list"
+arm-none-eabi-size   bit_banding.elf 
+arm-none-eabi-objdump -h -S  bit_banding.elf  > "bit_banding.list"
    text	   data	    bss	    dec	    hex	filename
-   5572	    108	   1588	   7268	   1c64	stack.elf
+    704	      8	   1568	   2280	    8e8	bit_banding.elf
 Finished building: default.size.stdout
  
-Finished building: stack.list
+Finished building: bit_banding.list
+ 
+00:34:29 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-size   ISR.elf 
+   text	   data	    bss	    dec	    hex	filename
+    744	      8	   1568	   2320	    910	ISR.elf
+Finished building: default.size.stdout
+ 
+00:35:49 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:28:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   28 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "ISR.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\ISR\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ISR.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ISR.elf
+ 
+arm-none-eabi-size   ISR.elf 
+arm-none-eabi-objdump -h -S  ISR.elf  > "ISR.list"
+   text	   data	    bss	    dec	    hex	filename
+    700	      8	   1568	   2276	    8e4	ISR.elf
+Finished building: default.size.stdout
+ 
+Finished building: ISR.list
+ 
+00:36:45 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:28:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   28 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "ISR.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\ISR\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ISR.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ISR.elf
+ 
+arm-none-eabi-size   ISR.elf 
+arm-none-eabi-objdump -h -S  ISR.elf  > "ISR.list"
+   text	   data	    bss	    dec	    hex	filename
+    732	      8	   1568	   2308	    904	ISR.elf
+Finished building: default.size.stdout
+ 
+Finished building: ISR.list
+ 
+00:37:03 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-size   ISR.elf 
+   text	   data	    bss	    dec	    hex	filename
+    732	      8	   1568	   2308	    904	ISR.elf
+Finished building: default.size.stdout
+ 
+00:38:14 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-size   ISR.elf 
+   text	   data	    bss	    dec	    hex	filename
+    732	      8	   1568	   2308	    904	ISR.elf
+Finished building: default.size.stdout
+ 
+00:39:01 **** Incremental Build of configuration Debug for project 001HelloWorld ****
+make -j8 all 
+arm-none-eabi-size   001HelloWorld.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3744	    108	   1588	   5440	   1540	001HelloWorld.elf
+Finished building: default.size.stdout
+ 
+00:40:15 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-size   ISR.elf 
+   text	   data	    bss	    dec	    hex	filename
+    732	      8	   1568	   2308	    904	ISR.elf
+Finished building: default.size.stdout
+ 
+00:47:30 **** Clean-only build of configuration Debug for project ISR ****
+make -j8 clean 
+rm -rf ./Startup/startup_stm32f303zetx.d ./Startup/startup_stm32f303zetx.o
+rm -rf ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf ISR.elf ISR.list ISR.map default.size.stdout
+rm: can't remove 'ISR.elf': Permission denied
+make: [makefile:79: clean] Error 1 (ignored)
+ 
+00:47:30 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303zetx.d" -MT"Startup/startup_stm32f303zetx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f303zetx.o" "../Startup/startup_stm32f303zetx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "ISR.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\ISR\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ISR.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ISR.elf
+ 
+arm-none-eabi-size   ISR.elf 
+arm-none-eabi-objdump -h -S  ISR.elf  > "ISR.list"
+   text	   data	    bss	    dec	    hex	filename
+    744	      8	   1568	   2320	    910	ISR.elf
+Finished building: default.size.stdout
+ 
+Finished building: ISR.list
+ 
+00:51:32 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-size   ISR.elf 
+   text	   data	    bss	    dec	    hex	filename
+    744	      8	   1568	   2320	    910	ISR.elf
+Finished building: default.size.stdout
+ 
+00:52:17 **** Incremental Build of configuration Debug for project ISR ****
+make -j8 all 
+arm-none-eabi-size   ISR.elf 
+   text	   data	    bss	    dec	    hex	filename
+    744	      8	   1568	   2320	    910	ISR.elf
+Finished building: default.size.stdout
+ 
+02:30:47 **** Incremental Build of configuration Debug for project 001HelloWorld ****
+make -j8 all 
+arm-none-eabi-size   001HelloWorld.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3744	    108	   1588	   5440	   1540	001HelloWorld.elf
+Finished building: default.size.stdout
+ 
+03:08:52 **** Clean-only build of configuration Debug for project operation_modes ****
+make -j8 clean 
+rm -rf ./Startup/startup_stm32f303zetx.d ./Startup/startup_stm32f303zetx.o
+rm -rf ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf default.size.stdout operation_modes.elf operation_modes.list operation_modes.map
+ 
+03:08:52 **** Build of configuration Debug for project operation_modes ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303zetx.d" -MT"Startup/startup_stm32f303zetx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f303zetx.o" "../Startup/startup_stm32f303zetx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "operation_modes.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\operation_modes\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="operation_modes.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: operation_modes.elf
+ 
+arm-none-eabi-size   operation_modes.elf 
+arm-none-eabi-objdump -h -S  operation_modes.elf  > "operation_modes.list"
+   text	   data	    bss	    dec	    hex	filename
+   3840	    108	   1588	   5536	   15a0	operation_modes.elf
+Finished building: default.size.stdout
+ 
+Finished building: operation_modes.list
  
