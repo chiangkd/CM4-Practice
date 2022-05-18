@@ -1,10 +1,23 @@
-20:43:22 **** Incremental Build of configuration Debug for project access_levels ****
+21:20:15 **** Build of configuration Debug for project access_levels ****
 make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303zetx.d" -MT"Startup/startup_stm32f303zetx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f303zetx.o" "../Startup/startup_stm32f303zetx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+../Src/main.c:11:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   11 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "access_levels.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\access_levels\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="access_levels.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: access_levels.elf
+ 
 arm-none-eabi-size   access_levels.elf 
+arm-none-eabi-objdump -h -S  access_levels.elf  > "access_levels.list"
    text	   data	    bss	    dec	    hex	filename
    3928	    108	   1588	   5624	   15f8	access_levels.elf
 Finished building: default.size.stdout
  
+Finished building: access_levels.list
+ 
 
-20:43:23 Build Finished. 0 errors, 0 warnings. (took 259ms)
+21:20:17 Build Finished. 0 errors, 1 warnings. (took 2s.829ms)
 

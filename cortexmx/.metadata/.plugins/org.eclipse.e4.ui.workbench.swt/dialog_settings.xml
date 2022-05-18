@@ -6,5 +6,9 @@
 		<item key="DIALOG_WIDTH" value="405"/>
 		<item key="DIALOG_HEIGHT" value="473"/>
 		<item key="DIALOG_FONT_NAME" value="1|Microsoft JhengHei UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft JhengHei UI"/>
+		<item key="ShowViewDialog.STORE_SELECTED_VIEW_ID" value="com.st.stm32cube.ide.mcu.debug.swv.core.itmtrace"/>
+		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="SWV"/>
+		</list>
 	</section>
 </section>

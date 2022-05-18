@@ -96,7 +96,7 @@ void generate_interrupt()
  80001e0:	603b      	str	r3, [r7, #0]
 
 	//enable IRQ3 interrupt
-	*pISER0 |= ( 1 << 3);
+	*pISER0 |= ( 1 << 3);	// 執行這行會跳入 HardFault_Handler()
  80001e2:	683b      	ldr	r3, [r7, #0]
  80001e4:	681b      	ldr	r3, [r3, #0]
  80001e6:	f043 0208 	orr.w	r2, r3, #8
@@ -125,7 +125,7 @@ void change_access_level_unpriv(void)
  8000208:	b480      	push	{r7}
  800020a:	af00      	add	r7, sp, #0
 	// read
-	__asm volatile ("MRS R0, CONTROL");
+	__asm volatile ("MRS R0, CONTROL");	// CONTROL 的值放進 R0 (0)
  800020c:	f3ef 8014 	mrs	r0, CONTROL
 	// modify
 	__asm volatile ("ORR R0,R0,#0x01"); // R0 和 #0x01 做 ORRing 之後存到 R0
