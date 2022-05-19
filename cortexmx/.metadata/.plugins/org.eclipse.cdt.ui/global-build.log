@@ -1,31 +1,236 @@
-02:24:49 **** Build of configuration Debug for project USART3_int_pend ****
+01:16:22 **** Incremental Build of configuration Debug for project interrupt_priority ****
 make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303zetx.d" -MT"Startup/startup_stm32f303zetx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f303zetx.o" "../Startup/startup_stm32f303zetx.s"
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc -o "USART3_int_pend.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\USART3_int_pend\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="USART3_int_pend.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: USART3_int_pend.elf
+arm-none-eabi-gcc -o "interrupt_priority.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\interrupt_priority\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="interrupt_priority.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: interrupt_priority.elf
  
-arm-none-eabi-size   USART3_int_pend.elf 
-arm-none-eabi-objdump -h -S  USART3_int_pend.elf  > "USART3_int_pend.list"
+arm-none-eabi-size   interrupt_priority.elf 
+arm-none-eabi-objdump -h -S  interrupt_priority.elf  > "interrupt_priority.list"
    text	   data	    bss	    dec	    hex	filename
-   3724	    108	   1588	   5420	   152c	USART3_int_pend.elf
+   3920	    120	   1584	   5624	   15f8	interrupt_priority.elf
 Finished building: default.size.stdout
  
-Finished building: USART3_int_pend.list
+Finished building: interrupt_priority.list
  
-02:25:23 **** Build of configuration Debug for project 001HelloWorld ****
+01:16:28 **** Incremental Build of configuration Debug for project interrupt_priority ****
 make -j8 all 
-arm-none-eabi-size   001HelloWorld.elf 
+arm-none-eabi-size   interrupt_priority.elf 
    text	   data	    bss	    dec	    hex	filename
-   3744	    108	   1588	   5440	   1540	001HelloWorld.elf
+   3920	    120	   1584	   5624	   15f8	interrupt_priority.elf
 Finished building: default.size.stdout
  
-02:26:00 **** Incremental Build of configuration Debug for project USART3_int_pend ****
+01:18:25 **** Incremental Build of configuration Debug for project interrupt_priority ****
 make -j8 all 
-arm-none-eabi-size   USART3_int_pend.elf 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "interrupt_priority.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\interrupt_priority\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="interrupt_priority.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: interrupt_priority.elf
+ 
+arm-none-eabi-size   interrupt_priority.elf 
+arm-none-eabi-objdump -h -S  interrupt_priority.elf  > "interrupt_priority.list"
    text	   data	    bss	    dec	    hex	filename
-   3724	    108	   1588	   5420	   152c	USART3_int_pend.elf
+   3924	    120	   1584	   5628	   15fc	interrupt_priority.elf
 Finished building: default.size.stdout
+ 
+Finished building: interrupt_priority.list
+ 
+01:19:05 **** Incremental Build of configuration Debug for project interrupt_priority ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "interrupt_priority.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\interrupt_priority\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="interrupt_priority.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: interrupt_priority.elf
+ 
+arm-none-eabi-size   interrupt_priority.elf 
+arm-none-eabi-objdump -h -S  interrupt_priority.elf  > "interrupt_priority.list"
+   text	   data	    bss	    dec	    hex	filename
+   3924	    120	   1584	   5628	   15fc	interrupt_priority.elf
+Finished building: default.size.stdout
+ 
+Finished building: interrupt_priority.list
+ 
+01:19:21 **** Incremental Build of configuration Debug for project interrupt_priority ****
+make -j8 all 
+arm-none-eabi-size   interrupt_priority.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3924	    120	   1584	   5628	   15fc	interrupt_priority.elf
+Finished building: default.size.stdout
+ 
+01:19:47 **** Incremental Build of configuration Debug for project interrupt_priority ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "interrupt_priority.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\interrupt_priority\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="interrupt_priority.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: interrupt_priority.elf
+ 
+arm-none-eabi-size   interrupt_priority.elf 
+arm-none-eabi-objdump -h -S  interrupt_priority.elf  > "interrupt_priority.list"
+   text	   data	    bss	    dec	    hex	filename
+   3904	    120	   1584	   5608	   15e8	interrupt_priority.elf
+Finished building: default.size.stdout
+ 
+Finished building: interrupt_priority.list
+ 
+01:20:11 **** Incremental Build of configuration Debug for project interrupt_priority ****
+make -j8 all 
+arm-none-eabi-size   interrupt_priority.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3904	    120	   1584	   5608	   15e8	interrupt_priority.elf
+Finished building: default.size.stdout
+ 
+01:20:40 **** Incremental Build of configuration Debug for project interrupt_priority ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'TIM2_IRQHandler':
+../Src/main.c:73:2: warning: implicit declaration of function 'fo4' [-Wimplicit-function-declaration]
+   73 |  fo4(;;);
+      |  ^~~
+../Src/main.c:73:6: error: expected expression before ';' token
+   73 |  fo4(;;);
+      |      ^
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+01:20:50 **** Incremental Build of configuration Debug for project interrupt_priority ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "interrupt_priority.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\interrupt_priority\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="interrupt_priority.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: interrupt_priority.elf
+ 
+arm-none-eabi-size   interrupt_priority.elf 
+arm-none-eabi-objdump -h -S  interrupt_priority.elf  > "interrupt_priority.list"
+   text	   data	    bss	    dec	    hex	filename
+   3920	    120	   1584	   5624	   15f8	interrupt_priority.elf
+Finished building: default.size.stdout
+ 
+Finished building: interrupt_priority.list
+ 
+01:28:22 **** Incremental Build of configuration Debug for project interrupt_priority ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "interrupt_priority.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\interrupt_priority\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="interrupt_priority.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: interrupt_priority.elf
+ 
+arm-none-eabi-size   interrupt_priority.elf 
+arm-none-eabi-objdump -h -S  interrupt_priority.elf  > "interrupt_priority.list"
+   text	   data	    bss	    dec	    hex	filename
+   3940	    120	   1584	   5644	   160c	interrupt_priority.elf
+Finished building: default.size.stdout
+ 
+Finished building: interrupt_priority.list
+ 
+01:28:54 **** Incremental Build of configuration Debug for project interrupt_priority ****
+make -j8 all 
+arm-none-eabi-size   interrupt_priority.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3940	    120	   1584	   5644	   160c	interrupt_priority.elf
+Finished building: default.size.stdout
+ 
+01:30:24 **** Incremental Build of configuration Debug for project interrupt_priority ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "interrupt_priority.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\interrupt_priority\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="interrupt_priority.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: interrupt_priority.elf
+ 
+arm-none-eabi-size   interrupt_priority.elf 
+arm-none-eabi-objdump -h -S  interrupt_priority.elf  > "interrupt_priority.list"
+   text	   data	    bss	    dec	    hex	filename
+   3920	    120	   1584	   5624	   15f8	interrupt_priority.elf
+Finished building: default.size.stdout
+ 
+Finished building: interrupt_priority.list
+ 
+01:30:42 **** Incremental Build of configuration Debug for project interrupt_priority ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "interrupt_priority.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\interrupt_priority\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="interrupt_priority.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: interrupt_priority.elf
+ 
+arm-none-eabi-size   interrupt_priority.elf 
+arm-none-eabi-objdump -h -S  interrupt_priority.elf  > "interrupt_priority.list"
+   text	   data	    bss	    dec	    hex	filename
+   3920	    120	   1584	   5624	   15f8	interrupt_priority.elf
+Finished building: default.size.stdout
+ 
+Finished building: interrupt_priority.list
+ 
+01:31:11 **** Incremental Build of configuration Debug for project interrupt_priority ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "interrupt_priority.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\interrupt_priority\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="interrupt_priority.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: interrupt_priority.elf
+ 
+arm-none-eabi-size   interrupt_priority.elf 
+arm-none-eabi-objdump -h -S  interrupt_priority.elf  > "interrupt_priority.list"
+   text	   data	    bss	    dec	    hex	filename
+   3940	    120	   1584	   5644	   160c	interrupt_priority.elf
+Finished building: default.size.stdout
+ 
+Finished building: interrupt_priority.list
+ 
+01:33:15 **** Incremental Build of configuration Debug for project interrupt_priority ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "interrupt_priority.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\interrupt_priority\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="interrupt_priority.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: interrupt_priority.elf
+ 
+arm-none-eabi-size   interrupt_priority.elf 
+arm-none-eabi-objdump -h -S  interrupt_priority.elf  > "interrupt_priority.list"
+   text	   data	    bss	    dec	    hex	filename
+   3940	    120	   1584	   5644	   160c	interrupt_priority.elf
+Finished building: default.size.stdout
+ 
+Finished building: interrupt_priority.list
+ 
+01:33:55 **** Incremental Build of configuration Debug for project interrupt_priority ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "interrupt_priority.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\interrupt_priority\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="interrupt_priority.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: interrupt_priority.elf
+ 
+arm-none-eabi-size   interrupt_priority.elf 
+arm-none-eabi-objdump -h -S  interrupt_priority.elf  > "interrupt_priority.list"
+   text	   data	    bss	    dec	    hex	filename
+   3940	    120	   1584	   5644	   160c	interrupt_priority.elf
+Finished building: default.size.stdout
+ 
+Finished building: interrupt_priority.list
+ 
+01:35:45 **** Incremental Build of configuration Debug for project interrupt_priority ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "interrupt_priority.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\interrupt_priority\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="interrupt_priority.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: interrupt_priority.elf
+ 
+arm-none-eabi-size   interrupt_priority.elf 
+arm-none-eabi-objdump -h -S  interrupt_priority.elf  > "interrupt_priority.list"
+   text	   data	    bss	    dec	    hex	filename
+   3944	    120	   1584	   5648	   1610	interrupt_priority.elf
+Finished building: default.size.stdout
+ 
+Finished building: interrupt_priority.list
+ 
+01:36:42 **** Incremental Build of configuration Debug for project interrupt_priority ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "interrupt_priority.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\interrupt_priority\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="interrupt_priority.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: interrupt_priority.elf
+ 
+arm-none-eabi-size   interrupt_priority.elf 
+arm-none-eabi-objdump -h -S  interrupt_priority.elf  > "interrupt_priority.list"
+   text	   data	    bss	    dec	    hex	filename
+   3940	    120	   1584	   5644	   160c	interrupt_priority.elf
+Finished building: default.size.stdout
+ 
+Finished building: interrupt_priority.list
+ 
+01:43:58 **** Incremental Build of configuration Debug for project interrupt_priority ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "interrupt_priority.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\interrupt_priority\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="interrupt_priority.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: interrupt_priority.elf
+ 
+arm-none-eabi-size   interrupt_priority.elf 
+arm-none-eabi-objdump -h -S  interrupt_priority.elf  > "interrupt_priority.list"
+   text	   data	    bss	    dec	    hex	filename
+   3920	    120	   1584	   5624	   15f8	interrupt_priority.elf
+Finished building: default.size.stdout
+ 
+Finished building: interrupt_priority.list
  
