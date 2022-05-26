@@ -3784,3 +3784,17 @@
 2022-05-23 01:40:24,787 [INFO] ApiDb:436 - User favorites MCUs=[]
 2022-05-23 01:40:24,791 [INFO] ApiDb:432 - Save user favorites file C:\Users\chiangkd/.stm32cubeide/favorites.boards.txt: 0 item(s)
 2022-05-23 01:40:24,791 [INFO] ApiDb:436 - User favorites Boards=[]
+2022-05-25 00:24:17,135 [INFO] Activator:177 - 
+
+
+2022-05-25 00:24:17,149 [INFO] Activator:178 - !SESSION log4j initialized
+2022-05-25 00:24:27,941 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2022-05-26 01:24:06,780 [INFO] Activator:177 - 
+
+
+2022-05-26 01:24:06,784 [INFO] Activator:178 - !SESSION log4j initialized
+2022-05-26 01:24:14,102 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2022-05-26 23:17:56,823 [INFO] Activator:177 - 
+
+
+2022-05-26 23:17:56,826 [INFO] Activator:178 - !SESSION log4j initialized
