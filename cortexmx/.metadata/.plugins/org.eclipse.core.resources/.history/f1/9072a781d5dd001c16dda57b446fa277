@@ -78,16 +78,7 @@ void UsageFault_Handler_c(uint32_t *pBaseStackFrame)
 	uint32_t *pUFSR = (uint32_t*)0xE000ED2A;
 	printf("Exception : UsageFault\n");
 	printf("UFSR = %lx\n", (*pUFSR) & 0xFFFF);	// use only the first 16 bits
-	printf("pBaseStackFrame = %p\n", pBaseStackFrame);
-	printf("Value of R0 = %lx\n", pBaseStackFrame[0]);
-	printf("Value of R1 = %lx\n", pBaseStackFrame[1]);
-	printf("Value of R2 = %lx\n", pBaseStackFrame[2]);
-	printf("Value of R3 = %lx\n", pBaseStackFrame[3]);
-	printf("Value of R12 = %lx\n", pBaseStackFrame[4]);
-	printf("Value of LR = %lx\n", pBaseStackFrame[5]);
-	printf("Value of PC = %lx\n", pBaseStackFrame[6]);
-	printf("Value of XPSR = %lx\n", pBaseStackFrame[7]);
-
+	printf("MSP = %p\n", pBaseStackFrame);
 	while(1);	// hang
 }
 

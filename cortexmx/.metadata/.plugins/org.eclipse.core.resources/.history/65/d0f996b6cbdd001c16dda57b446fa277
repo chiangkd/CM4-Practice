@@ -37,7 +37,7 @@ int main(void)
 
 	void (*some_address) (void);
 
-	some_address = (void*)0x2000F001;	// initialize this function pointer to this SRAM location
+	some_address = (void*)0x2000F000;	// initialize this function pointer to this SRAM location
 
 	some_address();	// dereference this function pointer (This is how to make PC to be load with 0x20010000)
 
@@ -65,29 +65,14 @@ void BusFault_Handler(void)
 	printf("Exception : BusFault\n");
 	while(1);	// hang
 }
-
-__attribute__ ((naked)) void UsageFault_Handler(void)
+void UsageFault_Handler(void)
 {
-	__asm ("MRS r0,MSP");
-	__asm ("B UsageFault_Handler_c");	// jumps to function UsageFault_Handler_c
-}
-
-
-void UsageFault_Handler_c(uint32_t *pBaseStackFrame)
-{
+	__asm ("MRS r0, MSP");	// store MSP value in R0
+	register uint32_t msp_value __asm("r0");	// not to create this variable in stack instead of use register attribute
+	uint32_t *pMSP = (uint32_t*)msp_value;
 	uint32_t *pUFSR = (uint32_t*)0xE000ED2A;
 	printf("Exception : UsageFault\n");
 	printf("UFSR = %lx\n", (*pUFSR) & 0xFFFF);	// use only the first 16 bits
-	printf("pBaseStackFrame = %p\n", pBaseStackFrame);
-	printf("Value of R0 = %lx\n", pBaseStackFrame[0]);
-	printf("Value of R1 = %lx\n", pBaseStackFrame[1]);
-	printf("Value of R2 = %lx\n", pBaseStackFrame[2]);
-	printf("Value of R3 = %lx\n", pBaseStackFrame[3]);
-	printf("Value of R12 = %lx\n", pBaseStackFrame[4]);
-	printf("Value of LR = %lx\n", pBaseStackFrame[5]);
-	printf("Value of PC = %lx\n", pBaseStackFrame[6]);
-	printf("Value of XPSR = %lx\n", pBaseStackFrame[7]);
-
 	while(1);	// hang
 }
 

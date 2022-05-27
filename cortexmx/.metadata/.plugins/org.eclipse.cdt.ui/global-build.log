@@ -1,301 +1,63 @@
-01:37:55 **** Incremental Build of configuration Debug for project fault_gen ****
+00:22:57 **** Build of configuration Debug for project fault_gen ****
 make -j8 all 
-arm-none-eabi-size   fault_gen.elf 
-   text	   data	    bss	    dec	    hex	filename
-   3956	    108	   1588	   5652	   1614	fault_gen.elf
-Finished building: default.size.stdout
- 
-01:38:05 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-size   fault_gen.elf 
-   text	   data	    bss	    dec	    hex	filename
-   3956	    108	   1588	   5652	   1614	fault_gen.elf
-Finished building: default.size.stdout
- 
-01:38:35 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303zetx.d" -MT"Startup/startup_stm32f303zetx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f303zetx.o" "../Startup/startup_stm32f303zetx.s"
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
 arm-none-eabi-gcc -o "fault_gen.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\fault_gen\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fault_gen.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: fault_gen.elf
  
 arm-none-eabi-size   fault_gen.elf 
 arm-none-eabi-objdump -h -S  fault_gen.elf  > "fault_gen.list"
    text	   data	    bss	    dec	    hex	filename
-   3976	    108	   1588	   5672	   1628	fault_gen.elf
+   6108	    108	   1588	   7804	   1e7c	fault_gen.elf
 Finished building: default.size.stdout
  
 Finished building: fault_gen.list
  
-01:43:56 **** Incremental Build of configuration Debug for project fault_gen ****
+00:24:01 **** Incremental Build of configuration Debug for project fault_gen ****
 make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-size   fault_gen.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6108	    108	   1588	   7804	   1e7c	fault_gen.elf
+Finished building: default.size.stdout
+ 
+00:53:14 **** Clean-only build of configuration Debug for project fault_gen ****
+make -j8 clean 
+rm -rf ./Startup/startup_stm32f303zetx.d ./Startup/startup_stm32f303zetx.o
+rm -rf ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf default.size.stdout fault_gen.elf fault_gen.list fault_gen.map
+rm: can't remove 'fault_gen.elf': Permission denied
+make: [makefile:79: clean] Error 1 (ignored)
+ 
+00:53:14 **** Incremental Build of configuration Debug for project fault_gen ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303zetx.d" -MT"Startup/startup_stm32f303zetx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f303zetx.o" "../Startup/startup_stm32f303zetx.s"
+arm-none-eabi-gcc "../Src/main-1.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main-1.d" -MT"Src/main-1.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main-1.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
 arm-none-eabi-gcc -o "fault_gen.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\fault_gen\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fault_gen.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: fault_gen.elf
  
 arm-none-eabi-size   fault_gen.elf 
 arm-none-eabi-objdump -h -S  fault_gen.elf  > "fault_gen.list"
    text	   data	    bss	    dec	    hex	filename
-   3956	    108	   1588	   5652	   1614	fault_gen.elf
+   6136	    108	   1588	   7832	   1e98	fault_gen.elf
 Finished building: default.size.stdout
  
 Finished building: fault_gen.list
  
-01:46:04 **** Incremental Build of configuration Debug for project fault_gen ****
+01:11:13 **** Incremental Build of configuration Debug for project fault_gen ****
 make -j8 all 
-arm-none-eabi-size   fault_gen.elf 
-   text	   data	    bss	    dec	    hex	filename
-   3956	    108	   1588	   5652	   1614	fault_gen.elf
-Finished building: default.size.stdout
- 
-01:47:04 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-size   fault_gen.elf 
-   text	   data	    bss	    dec	    hex	filename
-   3956	    108	   1588	   5652	   1614	fault_gen.elf
-Finished building: default.size.stdout
- 
-01:49:31 **** Incremental Build of configuration Debug for project 001HelloWorld ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "001HelloWorld.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\001HelloWorld\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="001HelloWorld.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 001HelloWorld.elf
- 
-arm-none-eabi-size   001HelloWorld.elf 
-arm-none-eabi-objdump -h -S  001HelloWorld.elf  > "001HelloWorld.list"
-   text	   data	    bss	    dec	    hex	filename
-   3956	    108	   1588	   5652	   1614	001HelloWorld.elf
-Finished building: default.size.stdout
- 
-Finished building: 001HelloWorld.list
- 
-01:50:34 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/main-1.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main-1.d" -MT"Src/main-1.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main-1.o"
 arm-none-eabi-gcc -o "fault_gen.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\fault_gen\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fault_gen.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: fault_gen.elf
  
 arm-none-eabi-size   fault_gen.elf 
 arm-none-eabi-objdump -h -S  fault_gen.elf  > "fault_gen.list"
    text	   data	    bss	    dec	    hex	filename
-   3956	    108	   1588	   5652	   1614	fault_gen.elf
+   6124	    108	   1588	   7820	   1e8c	fault_gen.elf
 Finished building: default.size.stdout
  
 Finished building: fault_gen.list
- 
-01:51:09 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "fault_gen.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\fault_gen\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fault_gen.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: fault_gen.elf
- 
-arm-none-eabi-size   fault_gen.elf 
-arm-none-eabi-objdump -h -S  fault_gen.elf  > "fault_gen.list"
-   text	   data	    bss	    dec	    hex	filename
-   3960	    108	   1588	   5656	   1618	fault_gen.elf
-Finished building: default.size.stdout
- 
-Finished building: fault_gen.list
- 
-01:51:24 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-size   fault_gen.elf 
-   text	   data	    bss	    dec	    hex	filename
-   3960	    108	   1588	   5656	   1618	fault_gen.elf
-Finished building: default.size.stdout
- 
-01:52:01 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-size   fault_gen.elf 
-   text	   data	    bss	    dec	    hex	filename
-   3960	    108	   1588	   5656	   1618	fault_gen.elf
-Finished building: default.size.stdout
- 
-01:52:43 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "fault_gen.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\fault_gen\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fault_gen.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: fault_gen.elf
- 
-arm-none-eabi-size   fault_gen.elf 
-arm-none-eabi-objdump -h -S  fault_gen.elf  > "fault_gen.list"
-   text	   data	    bss	    dec	    hex	filename
-   3964	    108	   1588	   5660	   161c	fault_gen.elf
-Finished building: default.size.stdout
- 
-Finished building: fault_gen.list
- 
-01:53:26 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "fault_gen.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\fault_gen\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fault_gen.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: fault_gen.elf
- 
-arm-none-eabi-size   fault_gen.elf 
-arm-none-eabi-objdump -h -S  fault_gen.elf  > "fault_gen.list"
-   text	   data	    bss	    dec	    hex	filename
-   3964	    108	   1588	   5660	   161c	fault_gen.elf
-Finished building: default.size.stdout
- 
-Finished building: fault_gen.list
- 
-02:08:31 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "fault_gen.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\fault_gen\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fault_gen.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: fault_gen.elf
- 
-arm-none-eabi-size   fault_gen.elf 
-arm-none-eabi-objdump -h -S  fault_gen.elf  > "fault_gen.list"
-   text	   data	    bss	    dec	    hex	filename
-   5760	    108	   1588	   7456	   1d20	fault_gen.elf
-Finished building: default.size.stdout
- 
-Finished building: fault_gen.list
- 
-02:09:23 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "fault_gen.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\fault_gen\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fault_gen.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: fault_gen.elf
- 
-arm-none-eabi-size   fault_gen.elf 
-arm-none-eabi-objdump -h -S  fault_gen.elf  > "fault_gen.list"
-   text	   data	    bss	    dec	    hex	filename
-   5752	    108	   1588	   7448	   1d18	fault_gen.elf
-Finished building: default.size.stdout
- 
-Finished building: fault_gen.list
- 
-02:18:05 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "fault_gen.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\fault_gen\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fault_gen.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: fault_gen.elf
- 
-arm-none-eabi-size   fault_gen.elf 
-arm-none-eabi-objdump -h -S  fault_gen.elf  > "fault_gen.list"
-   text	   data	    bss	    dec	    hex	filename
-   5752	    108	   1588	   7448	   1d18	fault_gen.elf
-Finished building: default.size.stdout
- 
-Finished building: fault_gen.list
- 
-02:18:59 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-size   fault_gen.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5752	    108	   1588	   7448	   1d18	fault_gen.elf
-Finished building: default.size.stdout
- 
-02:21:43 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "fault_gen.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\fault_gen\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fault_gen.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: fault_gen.elf
- 
-arm-none-eabi-size   fault_gen.elf 
-arm-none-eabi-objdump -h -S  fault_gen.elf  > "fault_gen.list"
-   text	   data	    bss	    dec	    hex	filename
-   5748	    108	   1588	   7444	   1d14	fault_gen.elf
-Finished building: default.size.stdout
- 
-Finished building: fault_gen.list
- 
-02:23:14 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "fault_gen.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\fault_gen\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fault_gen.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: fault_gen.elf
- 
-arm-none-eabi-size   fault_gen.elf 
-arm-none-eabi-objdump -h -S  fault_gen.elf  > "fault_gen.list"
-   text	   data	    bss	    dec	    hex	filename
-   5752	    108	   1588	   7448	   1d18	fault_gen.elf
-Finished building: default.size.stdout
- 
-Finished building: fault_gen.list
- 
-02:32:57 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-size   fault_gen.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5752	    108	   1588	   7448	   1d18	fault_gen.elf
-Finished building: default.size.stdout
- 
-02:43:08 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "fault_gen.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\fault_gen\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fault_gen.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: fault_gen.elf
- 
-arm-none-eabi-size   fault_gen.elf 
-arm-none-eabi-objdump -h -S  fault_gen.elf  > "fault_gen.list"
-   text	   data	    bss	    dec	    hex	filename
-   5752	    108	   1588	   7448	   1d18	fault_gen.elf
-Finished building: default.size.stdout
- 
-Finished building: fault_gen.list
- 
-02:58:51 **** Incremental Build of configuration Debug for project 001HelloWorld ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "001HelloWorld.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\001HelloWorld\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="001HelloWorld.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 001HelloWorld.elf
- 
-arm-none-eabi-size   001HelloWorld.elf 
-arm-none-eabi-objdump -h -S  001HelloWorld.elf  > "001HelloWorld.list"
-   text	   data	    bss	    dec	    hex	filename
-   3744	    108	   1588	   5440	   1540	001HelloWorld.elf
-Finished building: default.size.stdout
- 
-Finished building: 001HelloWorld.list
- 
-03:00:27 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-size   fault_gen.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5752	    108	   1588	   7448	   1d18	fault_gen.elf
-Finished building: default.size.stdout
- 
-03:09:53 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-size   fault_gen.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5752	    108	   1588	   7448	   1d18	fault_gen.elf
-Finished building: default.size.stdout
- 
-03:20:57 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-size   fault_gen.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5752	    108	   1588	   7448	   1d18	fault_gen.elf
-Finished building: default.size.stdout
- 
-03:49:21 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "fault_gen.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\fault_gen\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fault_gen.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: fault_gen.elf
- 
-arm-none-eabi-size   fault_gen.elf 
-arm-none-eabi-objdump -h -S  fault_gen.elf  > "fault_gen.list"
-   text	   data	    bss	    dec	    hex	filename
-   5748	    108	   1588	   7444	   1d14	fault_gen.elf
-Finished building: default.size.stdout
- 
-Finished building: fault_gen.list
- 
-03:49:34 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-size   fault_gen.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5748	    108	   1588	   7444	   1d14	fault_gen.elf
-Finished building: default.size.stdout
- 
-03:49:49 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-size   fault_gen.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5748	    108	   1588	   7444	   1d14	fault_gen.elf
-Finished building: default.size.stdout
  
