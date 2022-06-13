@@ -41,16 +41,7 @@ int main(void)
 {
     /* Loop forever */
 
-	__asm("SVC #25");
-
-//	register uint32_t data __asm("r0");
-
-	uint32_t data;
-
-	__asm volatile ("MOV %0,R0": "=r"(data) ::);
-
-	printf("data = %ld \n", data);
-
+	__asm("SVC #254");
 	for(;;);
 }
 
@@ -80,8 +71,6 @@ void SVC_Handler_c(uint32_t *pBaseOfStackFrame)	// Handler code
 
 	printf("SVC number is : %d\n", svc_number);
 
-	svc_number += 4;
 
-	pBaseOfStackFrame[0] = svc_number;	// This is R0 position
 }
 

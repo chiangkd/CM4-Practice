@@ -41,13 +41,9 @@ int main(void)
 {
     /* Loop forever */
 
-	__asm("SVC #25");
+	__asm("SVC #254");
 
-//	register uint32_t data __asm("r0");
-
-	uint32_t data;
-
-	__asm volatile ("MOV %0,R0": "=r"(data) ::);
+	register uint32_t data __asm("r0");
 
 	printf("data = %ld \n", data);
 
