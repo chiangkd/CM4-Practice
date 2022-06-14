@@ -1,306 +1,49 @@
-00:22:57 **** Build of configuration Debug for project fault_gen ****
+01:24:07 **** Incremental Build of configuration Debug for project svc_operation ****
 make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303zetx.d" -MT"Startup/startup_stm32f303zetx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f303zetx.o" "../Startup/startup_stm32f303zetx.s"
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:61:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   61 |  printf("Add result = %ld\n", res);
+      |  ^~~~~~
+../Src/main.c:61:2: warning: incompatible implicit declaration of built-in function 'printf'
+../Src/main.c:20:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   19 | #include <stdint.h>
+  +++ |+#include <stdio.h>
+   20 | 
+../Src/main.c: In function 'SVC_Handler_c':
+../Src/main.c:83:2: warning: incompatible implicit declaration of built-in function 'printf'
+   83 |  printf("in SVC handler\n");
+      |  ^~~~~~
+../Src/main.c:83:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc -o "svc_operation.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\svc_operation\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="svc_operation.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: svc_operation.elf
+ 
+arm-none-eabi-size   svc_operation.elf 
+arm-none-eabi-objdump -h -S  svc_operation.elf  > "svc_operation.list"
+   text	   data	    bss	    dec	    hex	filename
+   5924	    108	   1588	   7620	   1dc4	svc_operation.elf
+Finished building: default.size.stdout
+ 
+Finished building: svc_operation.list
+ 
+01:24:47 **** Incremental Build of configuration Debug for project svc_operation ****
+make -j8 all 
+arm-none-eabi-size   svc_operation.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5924	    108	   1588	   7620	   1dc4	svc_operation.elf
+Finished building: default.size.stdout
+ 
+01:26:58 **** Incremental Build of configuration Debug for project svc_operation ****
+make -j8 all 
 arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc -o "fault_gen.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\fault_gen\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fault_gen.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: fault_gen.elf
+arm-none-eabi-gcc -o "svc_operation.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\svc_operation\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="svc_operation.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: svc_operation.elf
  
-arm-none-eabi-size   fault_gen.elf 
-arm-none-eabi-objdump -h -S  fault_gen.elf  > "fault_gen.list"
+arm-none-eabi-size   svc_operation.elf 
+arm-none-eabi-objdump -h -S  svc_operation.elf  > "svc_operation.list"
    text	   data	    bss	    dec	    hex	filename
-   6108	    108	   1588	   7804	   1e7c	fault_gen.elf
+   6000	    108	   1588	   7696	   1e10	svc_operation.elf
 Finished building: default.size.stdout
  
-Finished building: fault_gen.list
- 
-00:24:01 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-size   fault_gen.elf 
-   text	   data	    bss	    dec	    hex	filename
-   6108	    108	   1588	   7804	   1e7c	fault_gen.elf
-Finished building: default.size.stdout
- 
-00:53:14 **** Clean-only build of configuration Debug for project fault_gen ****
-make -j8 clean 
-rm -rf ./Startup/startup_stm32f303zetx.d ./Startup/startup_stm32f303zetx.o
-rm -rf ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
-rm -rf default.size.stdout fault_gen.elf fault_gen.list fault_gen.map
-rm: can't remove 'fault_gen.elf': Permission denied
-make: [makefile:79: clean] Error 1 (ignored)
- 
-00:53:14 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303zetx.d" -MT"Startup/startup_stm32f303zetx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f303zetx.o" "../Startup/startup_stm32f303zetx.s"
-arm-none-eabi-gcc "../Src/main-1.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main-1.d" -MT"Src/main-1.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main-1.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc -o "fault_gen.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\fault_gen\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fault_gen.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: fault_gen.elf
- 
-arm-none-eabi-size   fault_gen.elf 
-arm-none-eabi-objdump -h -S  fault_gen.elf  > "fault_gen.list"
-   text	   data	    bss	    dec	    hex	filename
-   6136	    108	   1588	   7832	   1e98	fault_gen.elf
-Finished building: default.size.stdout
- 
-Finished building: fault_gen.list
- 
-01:11:13 **** Incremental Build of configuration Debug for project fault_gen ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main-1.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main-1.d" -MT"Src/main-1.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main-1.o"
-arm-none-eabi-gcc -o "fault_gen.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\fault_gen\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fault_gen.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: fault_gen.elf
- 
-arm-none-eabi-size   fault_gen.elf 
-arm-none-eabi-objdump -h -S  fault_gen.elf  > "fault_gen.list"
-   text	   data	    bss	    dec	    hex	filename
-   6124	    108	   1588	   7820	   1e8c	fault_gen.elf
-Finished building: default.size.stdout
- 
-Finished building: fault_gen.list
- 
-00:33:55 **** Build of configuration Debug for project svc_number ****
-make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303zetx.d" -MT"Startup/startup_stm32f303zetx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f303zetx.o" "../Startup/startup_stm32f303zetx.s"
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc -o "svc_number.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\svc_number\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="svc_number.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: svc_number.elf
- 
-arm-none-eabi-size   svc_number.elf 
-arm-none-eabi-objdump -h -S  svc_number.elf  > "svc_number.list"
-   text	   data	    bss	    dec	    hex	filename
-    656	      8	   1568	   2232	    8b8	svc_number.elf
-Finished building: default.size.stdout
- 
-Finished building: svc_number.list
- 
-00:34:13 **** Incremental Build of configuration Debug for project svc_number ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "svc_number.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\svc_number\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="svc_number.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: svc_number.elf
- 
-arm-none-eabi-size   svc_number.elf 
-arm-none-eabi-objdump -h -S  svc_number.elf  > "svc_number.list"
-   text	   data	    bss	    dec	    hex	filename
-   5204	    108	   1588	   6900	   1af4	svc_number.elf
-Finished building: default.size.stdout
- 
-Finished building: svc_number.list
- 
-01:03:48 **** Incremental Build of configuration Debug for project svc_number ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "svc_number.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\svc_number\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="svc_number.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: svc_number.elf
- 
-arm-none-eabi-size   svc_number.elf 
-arm-none-eabi-objdump -h -S  svc_number.elf  > "svc_number.list"
-   text	   data	    bss	    dec	    hex	filename
-   5208	    108	   1588	   6904	   1af8	svc_number.elf
-Finished building: default.size.stdout
- 
-Finished building: svc_number.list
- 
-01:52:53 **** Incremental Build of configuration Debug for project svc_number ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'SVC_Handler_c':
-../Src/main.c:60:11: warning: unused variable 'pReturn_addr' [-Wunused-variable]
-   60 |  uint8_t *pReturn_addr = (uint8_t*)pBaseOfStackFrame[6];
-      |           ^~~~~~~~~~~~
-arm-none-eabi-gcc -o "svc_number.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\svc_number\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="svc_number.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: svc_number.elf
- 
-arm-none-eabi-size   svc_number.elf 
-arm-none-eabi-objdump -h -S  svc_number.elf  > "svc_number.list"
-   text	   data	    bss	    dec	    hex	filename
-   5232	    108	   1588	   6928	   1b10	svc_number.elf
-Finished building: default.size.stdout
- 
-Finished building: svc_number.list
- 
-02:21:46 **** Incremental Build of configuration Debug for project svc_number ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'SVC_Handler_c':
-../Src/main.c:69:2: error: unknown type name 'uint_8_t'; did you mean 'uint8_t'?
-   69 |  uint_8_t svc_number = *pReturn_addr;
-      |  ^~~~~~~~
-      |  uint8_t
-../Src/main.c:71:31: error: 'SVC_number' undeclared (first use in this function); did you mean 'svc_number'?
-   71 |  printf("SVC number is : %d", SVC_number);
-      |                               ^~~~~~~~~~
-      |                               svc_number
-../Src/main.c:71:31: note: each undeclared identifier is reported only once for each function it appears in
-../Src/main.c:69:11: warning: unused variable 'svc_number' [-Wunused-variable]
-   69 |  uint_8_t svc_number = *pReturn_addr;
-      |           ^~~~~~~~~~
-make: *** [Src/subdir.mk:25: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-02:22:31 **** Incremental Build of configuration Debug for project svc_number ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'SVC_Handler_c':
-../Src/main.c:69:2: error: unknown type name 'uint_8_t'; did you mean 'uint8_t'?
-   69 |  uint_8_t svc_number = *pReturn_addr;
-      |  ^~~~~~~~
-      |  uint8_t
-../Src/main.c:71:31: error: 'SVC_number' undeclared (first use in this function); did you mean 'svc_number'?
-   71 |  printf("SVC number is : %d", SVC_number);
-      |                               ^~~~~~~~~~
-      |                               svc_number
-../Src/main.c:71:31: note: each undeclared identifier is reported only once for each function it appears in
-../Src/main.c:69:11: warning: unused variable 'svc_number' [-Wunused-variable]
-   69 |  uint_8_t svc_number = *pReturn_addr;
-      |           ^~~~~~~~~~
-make: *** [Src/subdir.mk:25: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-02:22:38 **** Incremental Build of configuration Debug for project svc_number ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'SVC_Handler_c':
-../Src/main.c:69:2: error: unknown type name 'uint_8_t'; did you mean 'uint8_t'?
-   69 |  uint_8_t svc_number = *pReturn_addr;
-      |  ^~~~~~~~
-      |  uint8_t
-../Src/main.c:71:31: error: 'SVC_number' undeclared (first use in this function); did you mean 'svc_number'?
-   71 |  printf("SVC number is : %d", SVC_number);
-      |                               ^~~~~~~~~~
-      |                               svc_number
-../Src/main.c:71:31: note: each undeclared identifier is reported only once for each function it appears in
-../Src/main.c:69:11: warning: unused variable 'svc_number' [-Wunused-variable]
-   69 |  uint_8_t svc_number = *pReturn_addr;
-      |           ^~~~~~~~~~
-make: *** [Src/subdir.mk:25: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-02:23:11 **** Incremental Build of configuration Debug for project svc_number ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "svc_number.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\svc_number\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="svc_number.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: svc_number.elf
- 
-arm-none-eabi-size   svc_number.elf 
-arm-none-eabi-objdump -h -S  svc_number.elf  > "svc_number.list"
-   text	   data	    bss	    dec	    hex	filename
-   5276	    108	   1588	   6972	   1b3c	svc_number.elf
-Finished building: default.size.stdout
- 
-Finished building: svc_number.list
- 
-02:23:15 **** Incremental Build of configuration Debug for project svc_number ****
-make -j8 all 
-arm-none-eabi-size   svc_number.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5276	    108	   1588	   6972	   1b3c	svc_number.elf
-Finished building: default.size.stdout
- 
-02:26:33 **** Incremental Build of configuration Debug for project svc_number ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "svc_number.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\svc_number\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="svc_number.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: svc_number.elf
- 
-arm-none-eabi-size   svc_number.elf 
-arm-none-eabi-objdump -h -S  svc_number.elf  > "svc_number.list"
-   text	   data	    bss	    dec	    hex	filename
-   5512	    108	   1588	   7208	   1c28	svc_number.elf
-Finished building: default.size.stdout
- 
-Finished building: svc_number.list
- 
-02:28:26 **** Incremental Build of configuration Debug for project svc_number ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "svc_number.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\svc_number\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="svc_number.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: svc_number.elf
- 
-arm-none-eabi-size   svc_number.elf 
-arm-none-eabi-objdump -h -S  svc_number.elf  > "svc_number.list"
-   text	   data	    bss	    dec	    hex	filename
-   5512	    108	   1588	   7208	   1c28	svc_number.elf
-Finished building: default.size.stdout
- 
-Finished building: svc_number.list
- 
-02:31:34 **** Incremental Build of configuration Debug for project svc_number ****
-make -j8 all 
-arm-none-eabi-size   svc_number.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5512	    108	   1588	   7208	   1c28	svc_number.elf
-Finished building: default.size.stdout
- 
-02:32:30 **** Incremental Build of configuration Debug for project svc_number ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "svc_number.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\svc_number\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="svc_number.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: svc_number.elf
- 
-arm-none-eabi-size   svc_number.elf 
-arm-none-eabi-objdump -h -S  svc_number.elf  > "svc_number.list"
-   text	   data	    bss	    dec	    hex	filename
-   5512	    108	   1588	   7208	   1c28	svc_number.elf
-Finished building: default.size.stdout
- 
-Finished building: svc_number.list
- 
-02:36:05 **** Incremental Build of configuration Debug for project svc_number ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "svc_number.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\svc_number\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="svc_number.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: svc_number.elf
- 
-arm-none-eabi-size   svc_number.elf 
-arm-none-eabi-objdump -h -S  svc_number.elf  > "svc_number.list"
-   text	   data	    bss	    dec	    hex	filename
-   5512	    108	   1588	   7208	   1c28	svc_number.elf
-Finished building: default.size.stdout
- 
-Finished building: svc_number.list
- 
-02:39:35 **** Incremental Build of configuration Debug for project svc_number ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "svc_number.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\svc_number\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="svc_number.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: svc_number.elf
- 
-arm-none-eabi-size   svc_number.elf 
-arm-none-eabi-objdump -h -S  svc_number.elf  > "svc_number.list"
-   text	   data	    bss	    dec	    hex	filename
-   5512	    108	   1588	   7208	   1c28	svc_number.elf
-Finished building: default.size.stdout
- 
-Finished building: svc_number.list
- 
-00:53:41 **** Incremental Build of configuration Debug for project svc_number ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "svc_number.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\svc_number\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="svc_number.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: svc_number.elf
- 
-arm-none-eabi-size   svc_number.elf 
-arm-none-eabi-objdump -h -S  svc_number.elf  > "svc_number.list"
-   text	   data	    bss	    dec	    hex	filename
-   5556	    108	   1588	   7252	   1c54	svc_number.elf
-Finished building: default.size.stdout
- 
-Finished building: svc_number.list
- 
-00:54:14 **** Incremental Build of configuration Debug for project svc_number ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "svc_number.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\svc_number\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="svc_number.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: svc_number.elf
- 
-arm-none-eabi-size   svc_number.elf 
-arm-none-eabi-objdump -h -S  svc_number.elf  > "svc_number.list"
-   text	   data	    bss	    dec	    hex	filename
-   5556	    108	   1588	   7252	   1c54	svc_number.elf
-Finished building: default.size.stdout
- 
-Finished building: svc_number.list
+Finished building: svc_operation.list
  

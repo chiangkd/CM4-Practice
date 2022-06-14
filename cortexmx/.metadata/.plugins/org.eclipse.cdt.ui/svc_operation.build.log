@@ -1,0 +1,17 @@
+01:26:58 **** Incremental Build of configuration Debug for project svc_operation ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc -o "svc_operation.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\svc_operation\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="svc_operation.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: svc_operation.elf
+ 
+arm-none-eabi-size   svc_operation.elf 
+arm-none-eabi-objdump -h -S  svc_operation.elf  > "svc_operation.list"
+   text	   data	    bss	    dec	    hex	filename
+   6000	    108	   1588	   7696	   1e10	svc_operation.elf
+Finished building: default.size.stdout
+ 
+Finished building: svc_operation.list
+ 
+
+01:26:58 Build Finished. 0 errors, 0 warnings. (took 702ms)
+
