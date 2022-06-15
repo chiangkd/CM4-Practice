@@ -1,49 +1,14 @@
-01:24:07 **** Incremental Build of configuration Debug for project svc_operation ****
+01:43:55 **** Incremental Build of configuration Debug for project task_scheduler ****
 make -j8 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:61:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-   61 |  printf("Add result = %ld\n", res);
-      |  ^~~~~~
-../Src/main.c:61:2: warning: incompatible implicit declaration of built-in function 'printf'
-../Src/main.c:20:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   19 | #include <stdint.h>
-  +++ |+#include <stdio.h>
-   20 | 
-../Src/main.c: In function 'SVC_Handler_c':
-../Src/main.c:83:2: warning: incompatible implicit declaration of built-in function 'printf'
-   83 |  printf("in SVC handler\n");
-      |  ^~~~~~
-../Src/main.c:83:2: note: include '<stdio.h>' or provide a declaration of 'printf'
-arm-none-eabi-gcc -o "svc_operation.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\svc_operation\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="svc_operation.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: svc_operation.elf
+arm-none-eabi-gcc -o "task_scheduler.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\task_scheduler\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="task_scheduler.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: task_scheduler.elf
  
-arm-none-eabi-size   svc_operation.elf 
-arm-none-eabi-objdump -h -S  svc_operation.elf  > "svc_operation.list"
+arm-none-eabi-size   task_scheduler.elf 
+arm-none-eabi-objdump -h -S  task_scheduler.elf  > "task_scheduler.list"
    text	   data	    bss	    dec	    hex	filename
-   5924	    108	   1588	   7620	   1dc4	svc_operation.elf
+    656	      8	   1568	   2232	    8b8	task_scheduler.elf
 Finished building: default.size.stdout
  
-Finished building: svc_operation.list
- 
-01:24:47 **** Incremental Build of configuration Debug for project svc_operation ****
-make -j8 all 
-arm-none-eabi-size   svc_operation.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5924	    108	   1588	   7620	   1dc4	svc_operation.elf
-Finished building: default.size.stdout
- 
-01:26:58 **** Incremental Build of configuration Debug for project svc_operation ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F303ZETx -DNUCLEO_F303ZE -DSTM32F3 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc -o "svc_operation.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\svc_operation\STM32F303ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="svc_operation.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: svc_operation.elf
- 
-arm-none-eabi-size   svc_operation.elf 
-arm-none-eabi-objdump -h -S  svc_operation.elf  > "svc_operation.list"
-   text	   data	    bss	    dec	    hex	filename
-   6000	    108	   1588	   7696	   1e10	svc_operation.elf
-Finished building: default.size.stdout
- 
-Finished building: svc_operation.list
+Finished building: task_scheduler.list
  
