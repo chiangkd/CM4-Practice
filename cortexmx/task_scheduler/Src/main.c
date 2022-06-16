@@ -30,6 +30,20 @@ void task2_handler(void);	// This is task2
 void task3_handler(void);	// This is task3
 void task4_handler(void);	// This is task4
 
+/* some stack memory calculation */
+#define SIZE_TASK_STACK 		1024U
+#define SIZE_SCHED_STACL		1024U
+
+#define SRAM_START				0x20000000U	// start of SRAM
+#define SIZE_SRAM				((128) * (1024))	// means 1KB
+#define SRAM_END				((SRAM_START) + (SIZE_SRAM))
+
+/* define a couple of macros describing a stack information of various user task */
+#define T1_STACK_START			SRAM_END
+#define T2_STACK_START			((SRAM_END) - (1 * SIZE_TASK_STACK))
+#define T3_STACK_START			((SRAM_END) - (2 * SIZE_TASK_STACK))
+#define T4_STACK_START			((SRAM_END) - (3 * SIZE_TASK_STACK))
+#define SCHED_STACK_START		((SRAM_END) - (4 * SIZE_TASK_STACK))
 
 
 int main(void)
