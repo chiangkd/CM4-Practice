@@ -96,7 +96,7 @@ void init_systick_timer(uint32_t tick_hz)
 	uint32_t count_value = (SYSTICK_TIM_CLK / tick_hz) - 1;	// remember to minus 1
 
 	// Clear the value of SVR
-	*pSRVR &= ~(0x00FFFFFF);	// only 24 bits are valid
+	*pSRVR &= ~(0x00FFFFFFFF);	// only 24 bits are valid
 
 	// load the value in to SVR
 	*pSRVR |= count_value;
@@ -107,11 +107,6 @@ void init_systick_timer(uint32_t tick_hz)
 
 	// enable the setting
 	*pSCSR |= (1 << 0);		// Enables the counter
-}
-
-void SysTick_Handler(void)
-{
-
 }
 
 
