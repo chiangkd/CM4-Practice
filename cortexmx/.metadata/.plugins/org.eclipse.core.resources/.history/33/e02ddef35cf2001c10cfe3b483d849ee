@@ -33,7 +33,7 @@ void task4_handler(void);	// This is task4
 
 void init_systick_timer(uint32_t tick_hz);	// systick conf. function declaration
 __attribute__((naked)) void init_scheduler_stack(uint32_t sched_top_of_stack);
-void init_tasks_stack(void);	// prototype
+
 
 // global variable to store a PSP values of different task
 // is an array of MAX_TASKS

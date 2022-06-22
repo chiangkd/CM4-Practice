@@ -33,7 +33,7 @@ void task4_handler(void);	// This is task4
 
 void init_systick_timer(uint32_t tick_hz);	// systick conf. function declaration
 __attribute__((naked)) void init_scheduler_stack(uint32_t sched_top_of_stack);
-void init_tasks_stack(void);	// prototype
+
 
 // global variable to store a PSP values of different task
 // is an array of MAX_TASKS
@@ -47,10 +47,10 @@ int main(void)
 {
 	init_scheduler_stack(SCHED_STACK_START);	// argument no.1 stored in R0
 
-	task_handlers[0] = (uint32_t)task1_handler;
-	task_handlers[1] = (uint32_t)task2_handler;
-	task_handlers[2] = (uint32_t)task3_handler;
-	task_handlers[3] = (uint32_t)task4_handler;
+	task_handlers[0] = (uint32_t)task1_hanler;
+	task_handlers[1] = (uint32_t)task2_hanler;
+	task_handlers[2] = (uint32_t)task3_hanler;
+	task_handlers[3] = (uint32_t)task4_hanler;
 
 	init_tasks_stack();
 
@@ -127,7 +127,7 @@ void init_tasks_stack(void)
 
 		/* fully descending */
 		pPSP--;	// xPSR
-		*pPSP = DUMMY_XPSR;	// 0x00100000
+		*pPSP = DUMNMY_XPSR;	// 0x00100000
 
 		pPSP--;	// PC
 		*pPSP = task_handlers[i];
