@@ -182,8 +182,8 @@ void save_psp_value(uint32_t current_psp_value)
 
 void update_next_task(void)
 {
-	current_task++;
-	current_task %= MAX_TASKS;	// 0 -> 1 -> 2 -> 3 -> 0 ...
+	curent_task++;
+	curent_task %= MAX_TASKS;	// 0 -> 1 -> 2 -> 3 -> 0 ...
 }
 
 
