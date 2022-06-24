@@ -34,8 +34,6 @@ void task4_handler(void);	// This is task4
 void init_systick_timer(uint32_t tick_hz);	// systick conf. function declaration
 __attribute__((naked)) void init_scheduler_stack(uint32_t sched_top_of_stack);
 void init_tasks_stack(void);	// prototype
-void enable_processor_faults(void);
-__attribute__((naked)) void switch_sp_to_psp(void);
 
 // global variable to store a PSP values of different task
 // is an array of MAX_TASKS
@@ -44,22 +42,9 @@ uint32_t psp_of_tasks[MAX_TASKS] = {T1_STACK_START, T2_STACK_START, T3_STACK_STA
 // global variable to store different task handler's address
 uint32_t task_handlers[MAX_TASKS];
 
-uint8_t current_task = 0;	// value = 0 means task1 is running
-
-
 
 int main(void)
 {
-
-	// we are dealing with stack memory and we may
-	// be touching or we may doing some illegal activities related to memory
-	// or inline assembly or whatever it could be, or there may be fault while changing from
-	// handler to thread mode or something like that.
-	// In order to trace the fault!
-	enable_processor_faults();
-
-	/* here use MSP as stack pointer by default */
-
 	init_scheduler_stack(SCHED_STACK_START);	// argument no.1 stored in R0
 
 	task_handlers[0] = (uint32_t)task1_handler;
@@ -70,12 +55,6 @@ int main(void)
 	init_tasks_stack();
 
 	init_systick_timer(TICK_HZ);
-
-	/* before call task1_handler, need to transfer to PSP as stack pointer */
-	switch_sp_to_psp();
-
-	task1_handler();
-
 	for(;;);
 }
 
@@ -165,58 +144,10 @@ void init_tasks_stack(void)
 	}
 }
 
-void enable_processor_faults(void)
-{
-	uint32_t *pSHCRS = (uint32_t*)0xE000ED24;
-
-	*pSHCRS |= ( 1 << 16); // mem manage
-	*pSHCRS |= ( 1 << 17); // bus fault
-	*pSHCRS |= ( 1 << 18); // usage fault
-}
-
-
-
-uint32_t get_psp_value(void)
-{
-	return psp_of_tasks[current_task];
-}
-
-
-__attribute__((naked)) void switch_sp_to_psp(void)	// change SP to PSP need inline assembly "MRS"
-{
-	// 1. initializer the PSP with TASK1 stack start
-
-	// get the value of PSP of current_task
-	__asm volatile ("PUSH {LR}");	// preserve LR which connects back to main
-	__asm volatile ("BL get_psp_value");	// the code will branch to get_psp_value
-	__asm volatile ("MSR PSP,R0");	// initialize PSP
-	__asm volatile ("POP {LR}");	// pops back LR value
-
-	// 2. change SP to PSP using CONTROL register
-	__asm volatile ("MOV R0,#0x02");	// use MOV instruction to store some immediate value
-	__asm volatile ("MSR CONTROL,R0");	// push R0 to CONTROL register
-	__asm volatile ("BX LR");
-}
 
 void SysTick_Handler(void)
 {
 
-}
-
-void HardFault_Handler(void)
-{
-	printf("Exception : Hardfault\n");
-	while(1);	// hang
-}
-void MemManage_Handler(void)
-{
-	printf("Exception : MemManage\n");
-	while(1);	// hang
-}
-void BusFault_Handler(void)
-{
-	printf("Exception : BusFault\n");
-	while(1);	// hang
 }
 
 

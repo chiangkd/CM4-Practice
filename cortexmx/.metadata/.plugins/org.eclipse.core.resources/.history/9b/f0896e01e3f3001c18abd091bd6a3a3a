@@ -196,6 +196,7 @@ __attribute__((naked)) void switch_sp_to_psp(void)	// change SP to PSP need inli
 	__asm volatile ("MOV R0,#0x02");	// use MOV instruction to store some immediate value
 	__asm volatile ("MSR CONTROL,R0");	// push R0 to CONTROL register
 	__asm volatile ("BX LR");
+
 }
 
 void SysTick_Handler(void)

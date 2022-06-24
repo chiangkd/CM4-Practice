@@ -35,7 +35,6 @@ void init_systick_timer(uint32_t tick_hz);	// systick conf. function declaration
 __attribute__((naked)) void init_scheduler_stack(uint32_t sched_top_of_stack);
 void init_tasks_stack(void);	// prototype
 void enable_processor_faults(void);
-__attribute__((naked)) void switch_sp_to_psp(void);
 
 // global variable to store a PSP values of different task
 // is an array of MAX_TASKS
@@ -196,6 +195,7 @@ __attribute__((naked)) void switch_sp_to_psp(void)	// change SP to PSP need inli
 	__asm volatile ("MOV R0,#0x02");	// use MOV instruction to store some immediate value
 	__asm volatile ("MSR CONTROL,R0");	// push R0 to CONTROL register
 	__asm volatile ("BX LR");
+
 }
 
 void SysTick_Handler(void)
