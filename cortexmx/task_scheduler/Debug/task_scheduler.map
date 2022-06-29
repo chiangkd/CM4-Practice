@@ -1033,14 +1033,14 @@ LOAD c:/st/stm32cubeide_1.9.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_line    0x0000000000000f90      0x4e0 ./Src/sysmem.o
  .debug_line    0x0000000000001470       0x84 ./Startup/startup_stm32f303zetx.o
 
-.debug_str      0x0000000000000000     0x95d1
- .debug_str     0x0000000000000000     0x7dd5 ./Src/main.o
-                                       0x7fd3 (size before relaxing)
- .debug_str     0x0000000000007dd5     0x1765 ./Src/syscalls.o
+.debug_str      0x0000000000000000     0x95d0
+ .debug_str     0x0000000000000000     0x7dd4 ./Src/main.o
+                                       0x7fd2 (size before relaxing)
+ .debug_str     0x0000000000007dd4     0x1765 ./Src/syscalls.o
                                        0x8a39 (size before relaxing)
- .debug_str     0x000000000000953a       0x66 ./Src/sysmem.o
+ .debug_str     0x0000000000009539       0x66 ./Src/sysmem.o
                                        0x5d75 (size before relaxing)
- .debug_str     0x00000000000095a0       0x31 ./Startup/startup_stm32f303zetx.o
+ .debug_str     0x000000000000959f       0x31 ./Startup/startup_stm32f303zetx.o
                                          0x76 (size before relaxing)
 
 .comment        0x0000000000000000       0x50

@@ -41,9 +41,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  18 .debug_line   000014f4  00000000  00000000  00023edb  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000095d1  00000000  00000000  000253cf  2**0
+ 19 .debug_str    000095d0  00000000  00000000  000253cf  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000050  00000000  00000000  0002e9a0  2**0
+ 20 .comment      00000050  00000000  00000000  0002e99f  2**0
                   CONTENTS, READONLY
  21 .debug_frame  00000bd4  00000000  00000000  0002e9f0  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -134,7 +134,7 @@ int main(void)
 
 	for(;;);
  800020e:	e7fe      	b.n	800020e <main+0x3a>
- 8000210:	2001f000 	.word	0x2001f000
+ 8000210:	2000f000 	.word	0x2000f000
  8000214:	08000229 	.word	0x08000229
  8000218:	20000090 	.word	0x20000090
  800021c:	08000239 	.word	0x08000239
@@ -317,7 +317,7 @@ void init_tasks_stack(void)
  80002fe:	60fb      	str	r3, [r7, #12]
 		*pPSP = DUMMY_XPSR;	// 0x00100000
  8000300:	68fb      	ldr	r3, [r7, #12]
- 8000302:	f04f 7280 	mov.w	r2, #16777216	; 0x1000000
+ 8000302:	f44f 1280 	mov.w	r2, #1048576	; 0x100000
  8000306:	601a      	str	r2, [r3, #0]
 
 		pPSP--;	// PC

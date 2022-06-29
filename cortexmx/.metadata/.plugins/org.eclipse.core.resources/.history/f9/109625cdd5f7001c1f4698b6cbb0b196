@@ -10,7 +10,7 @@
 #define SIZE_SCHED_STACL		1024U
 
 #define SRAM_START				0x20000000U	// start of SRAM
-#define SIZE_SRAM				((64) * (1024))	// means 1KB
+#define SIZE_SRAM				((128) * (1024))	// means 1KB
 #define SRAM_END				((SRAM_START) + (SIZE_SRAM))
 
 /* define a couple of macros describing a stack information of various user task */

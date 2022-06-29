@@ -11353,3 +11353,73 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-06-25 00:27:09.286
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2022-06-30 01:39:23.973 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_TW
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-06-30 01:39:43.691
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-06-30 01:39:43.810
+!MESSAGE Log4j initialized with config file C:\Users\chiangkd\Desktop\CM4-Practice\cortexmx\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-06-30 01:39:59.497
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2022-06-30 01:41:54.122
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 8000000; div: 4
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2022-06-30 01:49:43.339
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 8000000; div: 4
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2022-06-30 01:50:47.694
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 8000000; div: 4
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10002 2022-06-30 01:51:28.221
+!MESSAGE Invalid frame (gdb[4].proc[42000].threadGroup[i1],gdb[4].proc[42000].OSthread[1]).thread[1].frame[1]
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2022-06-30 01:52:10.449
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 8000000; div: 4
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2022-06-30 01:56:26.187
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 8000000; div: 4
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2022-06-30 01:56:48.412
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 8000000; div: 4
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2022-06-30 01:59:16.397
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 8000000; div: 4
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2022-06-30 02:03:52.631
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 8000000; div: 4
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2022-06-30 02:04:28.869
+!MESSAGE Error in final launch sequence:
+
+Target does not support SWV
+!STACK 1
+org.eclipse.core.runtime.CoreException: Target does not support SWV
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:252)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:328)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 com.st.stm32cube.ide.mcu.debug.stlink 4 0 2022-06-30 02:04:28.870
+!MESSAGE Target does not support SWV
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2022-06-30 02:04:42.590
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 8000000; div: 4
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2022-06-30 02:05:11.341
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 8000000; div: 4
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2022-06-30 02:05:40.024
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 8000000; div: 4
