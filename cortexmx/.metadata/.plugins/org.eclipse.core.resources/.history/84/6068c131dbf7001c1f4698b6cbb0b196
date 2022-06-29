@@ -25,6 +25,6 @@
 #define HSI_CLOCK			8000000U	// rm 9.2 clock
 #define SYSTICK_TIM_CLK 	HSI_CLOCK
 
-#define DUMMY_XPSR	0x01000000U
+#define DUMMY_XPSR	0x00100000U
 
 #endif /* MAIN_H_ */
