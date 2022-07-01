@@ -194,7 +194,7 @@ void init_tasks_stack(void)
 		*pPSP = DUMMY_XPSR;	// 0x00100000
 
 		pPSP--;	// PC
-		*pPSP =  (uint32_t) user_tasks[i].task_handler;
+		*pPSP =  user_tasks[i].task_handler;
 
 		pPSP--;	// LR
 		*pPSP = 0xFFFFFFFD;
