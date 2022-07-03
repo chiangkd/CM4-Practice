@@ -184,11 +184,11 @@ __attribute__((naked)) void init_scheduler_stack(uint32_t sched_top_of_stack)
 void init_tasks_stack(void)
 {
 	// keep all the task in a running state
-	user_tasks[0].current_state = TASK_RUNNING_STATE;
-	user_tasks[1].current_state = TASK_RUNNING_STATE;
-	user_tasks[2].current_state = TASK_RUNNING_STATE;
-	user_tasks[3].current_state = TASK_RUNNING_STATE;
-	user_tasks[4].current_state = TASK_RUNNING_STATE;
+	user_tasks[0].current_state = TASK_READY_STATE;
+	user_tasks[1].current_state = TASK_READY_STATE;
+	user_tasks[2].current_state = TASK_READY_STATE;
+	user_tasks[3].current_state = TASK_READY_STATE;
+	user_tasks[4].current_state = TASK_READY_STATE;
 
 	// initialize psp value
 	user_tasks[0].psp_value = IDLE_STACK_START;
@@ -276,17 +276,27 @@ __attribute__((naked)) void switch_sp_to_psp(void)	// change SP to PSP need inli
 	__asm volatile ("BX LR");
 }
 
+
+void schedule()
+{
+	// pend the pendSV exception
+	uint32_t *pICSR = (uint32_t*)0xE000ED04;
+	*pICSR |= (1 << 28);
+}
+
 void task_delay(uint32_t tick_count)
 {
 	// take global tick count (g_tick_count) as a reference (maintain by the sysTick)
 	// tick_count is sent by the task
-	user_tasks[current_task].block_count = g_tick_count + tick_count;
-	user_tasks[current_task].current_state = TASK_BLOCKED_STATE;
+	if(current_task) {	// only blocked user task (0 means idle task)
+		user_tasks[current_task].block_count = g_tick_count + tick_count;	// update the block count
+		user_tasks[current_task].current_state = TASK_BLOCKED_STATE;	// change the state
+		schedule();	// allow other task to run
+	}
+
 }
 
-
-
-__attribute__((naked)) void SysTick_Handler(void)
+__attribute__((naked)) void PendSV_Handler(void)
 {
 	/* Save the context of current task */
 	// 1. Get current running task's PSP value
@@ -317,6 +327,37 @@ __attribute__((naked)) void SysTick_Handler(void)
 	__asm volatile ("POP {LR}");	// retrieve LR value
 
 	__asm volatile("BX LR");	// write exception exit manually.
+}
+
+void update_global_tick_count(void)
+{
+	g_tick_count++;
+}
+
+/**
+ * check blocked task which can qualify for a running state.
+ * (by comparing the block_tick_count or block period of the bloccked_task)
+ */
+__attribute__((naked)) void unlock_tasks(void)
+{
+	for(int i = 1; i < MAX_TASKS; i++) {	// i = 0 is idle_task, so don't need to check
+		if(user_tasks[i].current_state != TASK_READY_STATE) {	// not ready state
+			if(user_tasks[i].block_count == g_tick_count) {	// means that the delay is elapsed
+				user_tasks[i].current_state = TASK_READY_STATE;
+			}
+		}
+	}
+}
+
+
+void SysTick_Handler(void)	// not to be naked function, treat it as a C funtion
+{
+	uint32_t *pICSR = (uint32_t*)0xE000ED04;
+
+	update_global_tick_count();
+	unblock_tasks();	// check blocked task which can qualify for a running state. (by comparing the block_tick_count or block period of the bloccked_task)
+	// pend the pendSV exception
+	*pICSR |= (1 << 28);
 }
 
 void HardFault_Handler(void)
