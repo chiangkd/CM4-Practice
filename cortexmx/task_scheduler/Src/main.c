@@ -119,9 +119,11 @@ void task1_handler(void)
 	{
 //		printf("This is task1\n");
 		led_on(LED_BLUE);
-		delay(DELAY_COUNT_1S);
+		task_delay(1000);	// this task will get blocked for the next 1000 ticks
+//		delay(DELAY_COUNT_1S);
 		led_off(LED_BLUE);
-		delay(DELAY_COUNT_1S);
+		task_delay(1000);
+//		delay(DELAY_COUNT_1S);
 	}
 }
 void task2_handler(void)
@@ -130,9 +132,11 @@ void task2_handler(void)
 	{
 //		printf("This is task2\n");
 		led_on(LED_RED);
-		delay(DELAY_COUNT_500MS);
+		task_delay(500);	// this task will get blocked for the next 500 ticks
+//		delay(DELAY_COUNT_500MS);
 		led_off(LED_RED);
-		delay(DELAY_COUNT_500MS);
+//		delay(DELAY_COUNT_500MS);
+		task_delay(500);
 	}
 }
 void task3_handler(void)
@@ -248,9 +252,21 @@ void save_psp_value(uint32_t current_psp_value)
 
 void update_next_task(void)
 {
-	current_task++;
-	current_task %= MAX_TASKS;	// 0 -> 1 -> 2 -> 3 -> 0 ...
+	int state = TASK_BLOCKED_STATE;
+	// if all user_tasks are in blocked state,
+	// then this state variable will not get modified.
+
+	for(int i = 0; i < (MAX_TASKS); i++) {	// go through all the task
+		current_task++;
+		current_task %= MAX_TASKS;	// 0 -> 1 -> 2 -> 3 -> 4 -> 0 ...
+		state = user_tasks[current_task].current_state;
+		if((state == TASK_READY_STATE) && (current_task != 0))	// if it is ready, then it is schedulable (ignore idle task)
+			break;
+	}
+	if(state != TASK_READY_STATE)	// all the tasks are in blocked state.
+		current_task = 0;	// idle_task
 }
+
 
 
 uint32_t get_psp_value(void)
@@ -284,8 +300,15 @@ void schedule()
 	*pICSR |= (1 << 28);
 }
 
+
+
+
 void task_delay(uint32_t tick_count)
 {
+
+	// disable interrupt
+	INTERRUPT_DISABLE();
+
 	// take global tick count (g_tick_count) as a reference (maintain by the sysTick)
 	// tick_count is sent by the task
 	if(current_task) {	// only blocked user task (0 means idle task)
@@ -294,6 +317,8 @@ void task_delay(uint32_t tick_count)
 		schedule();	// allow other task to run
 	}
 
+	// enable interrupt
+	INTERRUPT_ENABLE();
 }
 
 __attribute__((naked)) void PendSV_Handler(void)
@@ -338,7 +363,7 @@ void update_global_tick_count(void)
  * check blocked task which can qualify for a running state.
  * (by comparing the block_tick_count or block period of the bloccked_task)
  */
-__attribute__((naked)) void unlock_tasks(void)
+void unblock_tasks(void)
 {
 	for(int i = 1; i < MAX_TASKS; i++) {	// i = 0 is idle_task, so don't need to check
 		if(user_tasks[i].current_state != TASK_READY_STATE) {	// not ready state

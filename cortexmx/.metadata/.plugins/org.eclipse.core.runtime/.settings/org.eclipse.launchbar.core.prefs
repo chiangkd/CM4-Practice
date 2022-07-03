@@ -10,4 +10,5 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:PinRead_and_ISR/activeLaunchMod
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:fault_gen/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:interrupt_priority/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:operation_modes/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:task_scheduler/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:001Helloworld_semihosting\ Debug/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
